@@ -5,6 +5,7 @@ MVP
 (건설사)
 건설사 회원가입
 > 사업자 확인
+> https://www.data.go.kr/data/15081808/openapi.do#/%EC%82%AC%EC%97%85%EC%9E%90%EB%93%B1%EB%A1%9D%EC%A0%95%EB%B3%B4%20%EC%A7%84%EC%9C%84%ED%99%95%EC%9D%B8%20API/validate
 
 건설 기계 구인글 추가
 > 건설 현장 확인필요
@@ -25,6 +26,7 @@ MVP
 > 사업자 확인
 > 면허증 확인
 > 경력추가
+> https://www.data.go.kr/data/15081808/openapi.do#/%EC%82%AC%EC%97%85%EC%9E%90%EB%93%B1%EB%A1%9D%EC%A0%95%EB%B3%B4%20%EC%A7%84%EC%9C%84%ED%99%95%EC%9D%B8%20API/validate
 
 개인 정보 수정(주소, 경력)
 
