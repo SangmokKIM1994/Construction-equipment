@@ -6,6 +6,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { typeORMConfig } from './config/typeorm.config';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriverConfig, ApolloDriver } from '@nestjs/apollo';
+import { ConstructionModule } from './construction/construction.module';
 
 @Module({
   imports: [
@@ -13,6 +14,7 @@ import { ApolloDriverConfig, ApolloDriver } from '@nestjs/apollo';
       isGlobal: true,
     }),
     TypeOrmModule.forRoot(typeORMConfig),
+    ConstructionModule,
     // GraphQLModule.forRoot<ApolloDriverConfig>({
     //   driver: ApolloDriver,
     //   autoSchemaFile: true,
