@@ -11,6 +11,7 @@ import { ConstructionModule } from './construction/construction.module';
 @Module({
   imports: [
     ConfigModule.forRoot({
+      envFilePath: '.env',
       isGlobal: true,
     }),
     TypeOrmModule.forRoot(typeORMConfig),
