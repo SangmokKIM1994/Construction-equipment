@@ -1,4 +1,5 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from "typeorm";
+import { ConstructionSite } from "./construction_site.entity";
 
 @Entity()
 export class ConstructionCompany {
@@ -11,6 +12,6 @@ export class ConstructionCompany {
   @Column()
   company_address: string;
 
-  @Column()
-  construction_site: string;
+  @OneToMany(() => ConstructionSite, (site) => site.company)
+  site: ConstructionSite[];
 }
