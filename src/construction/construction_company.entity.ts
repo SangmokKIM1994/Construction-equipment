@@ -1,4 +1,10 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from "typeorm";
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  OneToMany,
+  JoinColumn,
+} from "typeorm";
 import { ConstructionSite } from "./construction_site.entity";
 
 @Entity()
@@ -13,5 +19,9 @@ export class ConstructionCompany {
   company_address: string;
 
   @OneToMany(() => ConstructionSite, (site) => site.company)
+  @JoinColumn({ name: "construction_site_id" })
   site: ConstructionSite[];
+
+  @Column()
+  construction_site_id: number;
 }
