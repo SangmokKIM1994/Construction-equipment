@@ -1,4 +1,10 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from "typeorm";
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  ManyToOne,
+  JoinColumn,
+} from "typeorm";
 import { ConstructionCompany } from "./construction_company.entity";
 
 @Entity()
@@ -19,5 +25,9 @@ export class ConstructionSite {
   equipment: number;
 
   @ManyToOne(() => ConstructionCompany, (company) => company.site)
+  @JoinColumn({ name: "construction_company_id" })
   company: ConstructionCompany;
+
+  @Column()
+  construction_company_id: number;
 }

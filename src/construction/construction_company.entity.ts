@@ -21,7 +21,4 @@ export class ConstructionCompany {
   @OneToMany(() => ConstructionSite, (site) => site.company)
   @JoinColumn({ name: "construction_site_id" })
   site: ConstructionSite[];
-
-  @Column()
-  construction_site_id: number;
 }

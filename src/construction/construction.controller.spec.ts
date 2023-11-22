@@ -15,4 +15,11 @@ describe("ConstructionController", () => {
   it("should be defined", () => {
     expect(controller).toBeDefined();
   });
+
+  it("회사 등록", ()=> {
+    const company_data = {
+      company_name:"00건설",
+      company_address:"대구시"
+    }
+  })
 });
