@@ -8,6 +8,7 @@ import { ConstructionModule } from "./construction/construction.module";
 import { EpuipmentModule } from './epuipment/epuipment.module';
 import { EquipmentController } from './equipment/equipment.controller';
 import { EquipmentService } from './equipment/equipment.service';
+import { EquipmentModule } from './equipment/equipment.module';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { EquipmentService } from './equipment/equipment.service';
     TypeOrmModule.forRoot(typeORMConfig),
     ConstructionModule,
     EpuipmentModule,
+    EquipmentModule,
     // GraphQLModule.forRoot<ApolloDriverConfig>({
     //   driver: ApolloDriver,
     //   autoSchemaFile: true,
