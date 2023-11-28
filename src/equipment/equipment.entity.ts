@@ -1,10 +1,4 @@
-import {
-  Entity,
-  PrimaryGeneratedColumn,
-  Column,
-  ManyToOne,
-  JoinColumn,
-} from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
 
 @Entity()
 export class Equipment {
@@ -17,6 +11,6 @@ export class Equipment {
   @Column()
   equipment_size: string;
 
-  @Column()
-  equipment_history: string;
+  @Column({ type: "json", nullable: true })
+  equipment_history: Record<string, any>[];
 }
