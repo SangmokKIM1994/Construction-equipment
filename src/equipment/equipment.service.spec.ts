@@ -1,7 +1,7 @@
-import { Test, TestingModule } from '@nestjs/testing';
-import { EquipmentService } from './equipment.service';
+import { Test, TestingModule } from "@nestjs/testing";
+import { EquipmentService } from "./equipment.service";
 
-describe('EquipmentService', () => {
+describe("EquipmentService", () => {
   let service: EquipmentService;
 
   beforeEach(async () => {
@@ -12,7 +12,14 @@ describe('EquipmentService', () => {
     service = module.get<EquipmentService>(EquipmentService);
   });
 
-  it('should be defined', () => {
+  it("건설 기계 등록 성공", () => {
+    const data = {
+      equipment_type: 2,
+      equipment_size: "140w",
+      equipment_history: [{}],
+    };
+
+    const result = service.create_equipment(data);
     expect(service).toBeDefined();
   });
 });
