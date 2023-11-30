@@ -9,4 +9,6 @@ export class EquipmentService {
     @InjectRepository(Equipment)
     private readonly equipmentRepository: Repository<Equipment>
   ) {}
+
+  async create_equipment() {}
 }
