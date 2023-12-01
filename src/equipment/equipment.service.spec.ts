@@ -12,14 +12,14 @@ describe("EquipmentService", () => {
     service = module.get<EquipmentService>(EquipmentService);
   });
 
-  it("건설 기계 등록 성공", () => {
+  it("건설 기계 등록 성공", async () => {
     const data = {
       equipment_type: 2,
       equipment_size: "140w",
       equipment_history: [{}],
     };
 
-    const result = service.create_equipment(data);
+    const result = await service.create_equipment(data);
 
     expect(result).toBeDefined();
     expect(result.equipment_id).toBeDefined();
@@ -29,13 +29,14 @@ describe("EquipmentService", () => {
     expect(result.equipment_history.length).toBe(data.equipment_history.length);
   });
 
-  it("건설 기계 타입이 입력 안됬을 때", () => {
+  it("건설 기계 타입이 입력 안됬을 때", async () => {
     const data = {
+      equipment_type: "",
       equipment_size: "140w",
       equipment_history: [{}],
     };
 
-    const result = service.create_equipment(data);
+    const result = await service.create_equipment(data);
     expect(result).toBeNull();
   });
 });
