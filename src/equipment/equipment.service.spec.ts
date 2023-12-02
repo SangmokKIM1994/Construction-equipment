@@ -39,4 +39,15 @@ describe("EquipmentService", () => {
     const result = await service.create_equipment(data);
     expect(result).toBeNull();
   });
+
+  it("건설 기계 용량이 입력 안됬을 때", async () => {
+    const data = {
+      equipment_type: 2,
+      equipment_size: "",
+      equipment_history: [{}],
+    };
+
+    const result = await service.create_equipment(data);
+    expect(result).toBeNull();
+  });
 });
