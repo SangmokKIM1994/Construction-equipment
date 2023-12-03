@@ -23,4 +23,11 @@ export class EquipmentService {
     await this.equipmentRepository.save(result);
     return result;
   }
+
+  async find_equipment({ equipment_id }): Promise<Equipment> {
+    const equipment = await this.equipmentRepository.findOne({
+      where: { equipment_id },
+    });
+    return equipment;
+  }
 }
