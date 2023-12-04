@@ -50,4 +50,11 @@ describe("EquipmentService", () => {
     const result = await service.create_equipment(data);
     expect(result).toBeNull();
   });
+
+  it("건설 기계 조회 성공", async () => {
+    const data = { equipment_id: 1 };
+
+    const result = await service.find_equipment(data);
+    expect(result).toBeDefined();
+  });
 });
