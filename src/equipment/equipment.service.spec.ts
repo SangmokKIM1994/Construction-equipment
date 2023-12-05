@@ -53,8 +53,13 @@ describe("EquipmentService", () => {
 
   it("건설 기계 조회 성공", async () => {
     const data = { equipment_id: 1 };
-
     const result = await service.find_equipment(data);
     expect(result).toBeDefined();
+  });
+
+  it("건설 기계 id가 숫자가 아닐 때", async () => {
+    const data = { equipment_id: "r" };
+    const result = await service.find_equipment(data);
+    expect(result).toBeNull();
   });
 });
