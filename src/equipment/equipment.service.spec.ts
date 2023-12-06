@@ -62,4 +62,10 @@ describe("EquipmentService", () => {
     const result = await service.find_equipment(data);
     expect(result).toBeNull();
   });
+
+  it("건설 기계 id값을 찾을 수 없을 때", async () => {
+    const data = { equipment_id: "999999999" };
+    const result = await service.find_equipment(data);
+    expect(result).toBeNull();
+  });
 });
